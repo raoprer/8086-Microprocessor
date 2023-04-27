@@ -1,6 +1,5 @@
-;doubt not getting stored in memory
 data segment
-	num db 12H
+	num db 3H
 	f dw ?
 data ends
 stack segment
@@ -18,6 +17,7 @@ start:
 	MOV AL, num
 	MOV AH, 0
 	CALL fact
+	MOV f, BX
 	MOV AH, 4CH
 	INT 21H
 fact PROC
@@ -27,10 +27,10 @@ fact PROC
 	DEC AX
 	CALL fact
 	POP AX
-	MUL f
-	MOV f, AX
+	MUL BX
+	MOV BX, AX
 	RET
-exit:   MOV f, 1
+exit: MOV BX, 1
 	RET
 fact ENDP
 code ends 

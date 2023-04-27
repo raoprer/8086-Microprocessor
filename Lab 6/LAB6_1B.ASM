@@ -14,14 +14,14 @@ start:
 	MOV AH, 4CH
 	INT 21H
 gcdp PROC
-up:     CMP AX, BX
+up:   CMP AX, BX
 	JE exit
 	JB bga
 	SUB AX, BX
 	JMP agb
-bga:    SUB BX, AX
-agb:    JMP up
-exit:   RET
+bga:  SUB BX, AX
+agb:  JMP up
+exit: RET
 gcdp ENDP
 code ends
 end start

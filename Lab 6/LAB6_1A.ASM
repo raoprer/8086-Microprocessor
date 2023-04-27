@@ -1,14 +1,14 @@
 gcdm MACRO num1, num2
 	MOV AX, num1
 	MOV BX, num2
-up:     CMP AX, BX
+up:   CMP AX, BX
 	JE exit
 	JB bga
 	SUB AX, BX
 	JMP agb
-bga:    SUB BX, AX
-agb:    JMP up
-exit:   MOV CL, 1   
+bga:  SUB BX, AX
+agb:  JMP up
+exit: MOV CL, 1   
 ENDM
 data segment 
 	num dW 40, 90
