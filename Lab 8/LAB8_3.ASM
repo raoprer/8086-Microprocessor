@@ -47,10 +47,18 @@ back: MOV AL, [SI]
 	INC DI
 	INC BX
 	LOOP back
+	print brk
+	print msg3
 	MOV AL, sum+1
-	CALL disp
+	ADD AL, 30H
+	MOV DL, AL
+	MOV AH, 02
+	INT 21H
 	MOV AL, sum
-	CALL disp
+	ADD AL, 30H
+	MOV DL, AL
+	MOV AH, 02
+	INT 21H
 	MOV AH, 4CH
 	INT 21H
 
