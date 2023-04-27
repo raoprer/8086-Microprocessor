@@ -45,7 +45,7 @@ m1:	MOV AX, SI
 	LEA DI, subs
 	PUSH CX
 	MOV CL, len2
-	REP CMPSB
+	REPZ CMPSB
 	JZ outf
 	MOV SI, AX ; to go back to start loc
 	INC SI
